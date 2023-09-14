@@ -105,17 +105,23 @@ h3 {
 }
 
 .checkbox-input {
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
-    cursor: pointer;
+    margin-right: 30px;
 }
 
 .custom-checkbox {
     width: 20px;
     height: 20px;
-    border: 2px solid var(--Almost-White, #E6E5EA);
+    border: 2px solid var(--Almost-White, #e6e5ea);
     position: absolute;
+    background: var(--Dark-Grey, #24232c);
+}
+  
+.checkbox-input:checked ~ .custom-checkbox {
+    background-color: rgba(164, 255, 175, 1);
+    background-image: url(/starter-code/assets/images/icon-check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
 }
 
 .password-strength-div {
@@ -136,15 +142,29 @@ h3 {
     font-weight: 700;
 }
 
-/* .password-strength-scale-div {
-    display: flex;
-    flex-direction: row;
-} */
-
 .password-strength-scale-p {
     color: var(--Almost-White, #E6E5EA);
     font-size: 18px;
     font-weight: 700;
+}
+
+.password-strength-scale-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.colored-rectangles-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.rectangle {
+    margin-left: 8px;
+    width: 10px;
+    height: 28px;
+    border: 2px solid var(--Almost-White, #E6E5EA);
 }
 
 .generate-button {
@@ -166,4 +186,100 @@ h3 {
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
+}
+
+@media screen and (min-width: 820px) and (max-width: 1440px){
+    
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .password-box {
+        width: 540px;
+        height: 80px;
+    }
+
+    .copy-img {
+        width: 21px;
+        height: 24px;
+    }
+
+    .password-parameters-box {
+        margin-top: 24px;
+        width: 540px;
+        height: 528px;
+        padding: 24px 32px 32px 32px;
+    }
+
+    .char-length-p {
+        font-size: 32px;
+    }
+
+    .priceslider {
+        width: 476px;
+        height: 8px;
+    }
+
+    .parameters-div {
+        margin-top: 30px;
+    }
+
+    .toggle {
+        margin-top: 20px;
+    }
+
+    .password-strength-div {
+        width: 476px;
+        height: 72px;
+    }
+
+    .strength-p {
+        font-size: 18px;
+    }
+
+    .password-strength-scale-p {
+        font-size: 24px;
+    }
+
+    .generate-button {
+        width: 476px;
+        height: 65px;
+        margin-top: 32px;
+    }
+
+    .generate-p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .copy-img:hover {
+        cursor: pointer;
+    }
+
+    .toggle {
+        cursor: pointer;
+    }
+
+    .generate-button:hover {
+        background: var(--Dark-Grey, #24232C);
+        cursor: pointer;
+        border: 2px solid var(--Neon-Green, #A4FFAF);    
+    }
+
+    .priceslider::-webkit-slider-thumb:hover {
+        background-color: var(--Very-Dark-Grey, #18171F);
+        border: 2px solid var(--Neon-Green, #A4FFAF);    
+        cursor: pointer;
+    }
+
 }
