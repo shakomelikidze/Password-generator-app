@@ -15,8 +15,8 @@ const medium = document.querySelector('.medium');
 const strong = document.querySelector('.strong');
 const passwordResult = document.querySelector('.password');
 const generateBtn = document.querySelector('.generate-button');
-const passwordStrength = document.querySelector('.password-strength-scale-p');
-const checkboxes = document.querySelectorAll('.checkbox-input');
+const passwordStrengthPP = document.querySelector('.password-strength-scale-p');
+// const checkboxes = document.querySelectorAll('.checkbox-input');
 
 // Copy button
 copyBtn.addEventListener('click', ()=> {
@@ -99,26 +99,30 @@ function passwordStrengthIndicator() {
         passwordStrength++;
     }
 
-    if (passwordStrength == 1) {
-        medium.textContent = "TOO WEAK!";
-        weak.style.background = "#F64A4A";
-        weak.style.border = "#F64A4A";
-    } else {
-        weak.style.background = "";
-        weak.style.border = "";
+    if (passwordStrength == 0) {
+        console.log('evrika');
     }
-    if (passwordStrength == 2) {
-        medium.textContent = "WEAK";
-        weak.style.background = "#FB7C58";
-        weak.style.border = "#FB7C58";
-        tooWeak.style.background = "#FB7C58";
-        tooWeak.style.border = "#FB7C58";
+
+    if (passwordStrength == 1) {
+        passwordStrengthPP.textContent = "TOO WEAK!";
+        tooWeak.style.background = "#F64A4A";
+        tooWeak.style.border = "#F64A4A";
     } else {
         tooWeak.style.background = "";
         tooWeak.style.border = "";
     }
+    if (passwordStrength == 2) {
+        passwordStrengthPP.textContent = "WEAK";
+        tooWeak.style.background = "#FB7C58";
+        tooWeak.style.border = "#FB7C58";
+        weak.style.background = "#FB7C58";
+        weak.style.border = "#FB7C58";
+    } else {
+        weak.style.background = "";
+        weak.style.border = "";
+    }
     if (passwordStrength == 3) {
-        medium.textContent = "MEDIUM";
+        passwordStrengthPP.textContent = "MEDIUM";
         tooWeak.style.background = "#F8CD65";
         tooWeak.style.border = "#F8CD65";
         weak.style.background = "#F8CD65";
@@ -130,7 +134,7 @@ function passwordStrengthIndicator() {
         medium.style.border = "";
     }
     if (passwordStrength == 4) {
-        medium.textContent = "STRONG";
+        passwordStrengthPP.textContent = "STRONG";
         tooWeak.style.background = "#A4FFAF";
         tooWeak.style.border = "#A4FFAF";
         weak.style.background = "#A4FFAF";
