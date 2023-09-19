@@ -43,6 +43,7 @@ slider.addEventListener("input", () => {
 // Function which generates password
 generateBtn.addEventListener('click', ()=> {
     passwordGenerator();
+    passwordStrengthIndicator();
 });
 
 function passwordGenerator() {
@@ -63,6 +64,11 @@ function passwordGenerator() {
     }
   
     let randomPassowrd = "";
+    for (let i = 0; i < slider.value; i++) {
+        const randomIndex = Math.floor(Math.random() * characterSet.length);
+        randomPassowrd += characterSet[randomIndex];
+    }
+    passwordResult.innerText = randomPassowrd;
   
     if (
       !uppercaseLetters.checked &&
@@ -71,15 +77,73 @@ function passwordGenerator() {
       !symbols.checked
     ) {
       passwordResult.innerHTML = "";
-      return;
-    }
-  
-    for (let i = 0; i < slider.value; i++) {
-      const randomIndex = Math.floor(Math.random() * characterSet.length);
-      randomPassowrd += characterSet[randomIndex];
-    }
+      medium.textContent = "";
+    } else {
     passwordResult.innerText = randomPassowrd;
-}
+    }
+};
+
+function passwordStrengthIndicator() {
+    let passwordStrength = 0;
+
+    if (uppercaseLetters.checked) {
+        passwordStrength++;
+    }
+    if (lowercaseLetters.checked) {
+        passwordStrength++;
+    }
+    if (numbers.checked) {
+        passwordStrength++;
+    }
+    if (symbols.checked) {
+        passwordStrength++;
+    }
+
+    if (passwordStrength == 1) {
+        medium.textContent = "TOO WEAK!";
+        weak.style.background = "#F64A4A";
+        weak.style.border = "#F64A4A";
+    } else {
+        weak.style.background = "";
+        weak.style.border = "";
+    }
+    if (passwordStrength == 2) {
+        medium.textContent = "WEAK";
+        weak.style.background = "#FB7C58";
+        weak.style.border = "#FB7C58";
+        tooWeak.style.background = "#FB7C58";
+        tooWeak.style.border = "#FB7C58";
+    } else {
+        tooWeak.style.background = "";
+        tooWeak.style.border = "";
+    }
+    if (passwordStrength == 3) {
+        medium.textContent = "MEDIUM";
+        tooWeak.style.background = "#F8CD65";
+        tooWeak.style.border = "#F8CD65";
+        weak.style.background = "#F8CD65";
+        weak.style.border = "#F8CD65";
+        medium.style.background = "#F8CD65";
+        medium.style.border = "#F8CD65";
+    } else {
+        medium.style.background = "";
+        medium.style.border = "";
+    }
+    if (passwordStrength == 4) {
+        medium.textContent = "STRONG";
+        tooWeak.style.background = "#A4FFAF";
+        tooWeak.style.border = "#A4FFAF";
+        weak.style.background = "#A4FFAF";
+        weak.style.border = "#A4FFAF";
+        medium.style.background = "#A4FFAF";
+        medium.style.border = "#A4FFAF";
+        strong.style.background = "#A4FFAF";
+        strong.style.border = "#A4FFAF";
+    } else {
+        strong.style.background = "";
+        strong.style.border = "";
+    }
+};
 
 
 
