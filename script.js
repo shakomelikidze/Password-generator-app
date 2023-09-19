@@ -40,7 +40,7 @@ slider.addEventListener("input", () => {
       "%, #18171F 100%)";
 });
 
-// Generate password
+// Function which generates password
 generateBtn.addEventListener('click', ()=> {
     passwordGenerator();
 });
@@ -81,90 +81,7 @@ function passwordGenerator() {
     passwordResult.innerText = randomPassowrd;
 }
 
-// Change rectangle colors
 
-// too-weak: #F64A4A
-// weak: #FB7C58
-// medium: #F8CD65
-// strong: #A4FFAF
-
-
-
-// generateBtn.addEventListener('click', ()=> {
-    // generate();
-// });
-
-// function countCheckedCheckboxes() {
-//     let checkedCount = 0;
-//     checkboxes.forEach(checkbox => {
-//         if (checkbox.checked) {
-//             checkedCount++;
-//         }
-//     });
-//     return checkedCount;
-// }
-//     checkboxes.forEach(checkbox => {
-//     checkbox.addEventListener('click', () => {
-//         const checkedCount = countCheckedCheckboxes();
-//         console.log(checkedCount);
-//     });
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   if (checkedCount == 1) {
-//     tooWeak.style.backgroundColor = '#F64A4A';
-//     tooWeak.style.border = '#F64A4A';
-//     passwordStrength.innerHTML = 'TOO WEAK!';
-//     weak.style.backgroundColor = '#18171F';
-//     weak.style.borderWidth = '2px';
-//     weak.style.borderColor = '#E6E5EA';
-//   }
-//   if (checkedCount == 2) {
-//     tooWeak.style.backgroundColor = '#FB7C58';
-//     tooWeak.style.border = '#FB7C58'
-//     weak.style.backgroundColor = '#FB7C58';
-//     weak.style.border = '#FB7C58';
-//     passwordStrength.innerHTML = 'WEAK';
-//   }
-//   if (checkedCount == 3) {
-//     tooWeak.style.backgroundColor = ' #F8CD65';
-//     tooWeak.style.border = ' #F8CD65';
-//     weak.style.backgroundColor = ' #F8CD65';
-//     weak.style.border = ' #F8CD65';
-//     medium.style.backgroundColor = ' #F8CD65';
-//     medium.style.border = ' #F8CD65';
-//     passwordStrength.innerHTML = 'MEDIUM';
-// }
-// if (checkedCount == 4) {
-//   tooWeak.style.backgroundColor = '#A4FFAF';
-//   tooWeak.style.border = '#A4FFAF';
-//   weak.style.backgroundColor = '#A4FFAF';
-//   weak.style.border = ' #A4FFAF';
-//   medium.style.backgroundColor = ' #A4FFAF';
-//   medium.style.border = ' #A4FFAF';
-//   strong.style.backgroundColor = '#A4FFAF';
-//   strong.style.border = '#A4FFAF';
-//   passwordStrength.innerHTML = 'STRONG';
-// }
 
 
 
